@@ -1,8 +1,29 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&family=Open+Sans&family=Righteous&display=swap');
+
+
+:root {
+  --main: hsl(196,64%,67%);
+  --secondary: hsla(174, 79%, 43%, 1);
+  --warning: #FF8E72;
+  --light: hsla(40, 88%, 97%, 1);
+  --error: hsla(358, 99%, 71%, 1);
+  --dark: hsla(196, 63%, 16%, 1);
+
+  --title-font: 'Comfortaa', cursive;
+  --main-font: 'Open Sans', sans-serif;
+
+}
+
+* {box-sizing: border-box;}
+
+h1 {
+  color: blueviolet;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: var(--main-font);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
