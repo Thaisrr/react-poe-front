@@ -1,3 +1,4 @@
+import Code from '../components/Code';
 import '../style/Presentation.css';
 
 function Presentation() {
@@ -24,7 +25,7 @@ function Presentation() {
                 <p>Pour utiliser React, il faut un environnement Node d'installer, avec une version supérieur
                     à la 14, et npm supérieur à la version 5.6
                 </p>
-                <p>On créé un projet React avec CRA : <code>npx create-react-app mon-app</code></p>
+                <p>On créé un projet React avec CRA : <Code>npx create-react-app mon-app</Code></p>
 
             </article>
             <article>

@@ -1,3 +1,5 @@
+import Code from "../components/Code";
+
 const Conditionnel = function() {
     const is_logged = true;
     const has_error = true;
@@ -37,12 +39,12 @@ const Conditionnel = function() {
             <p>Age : 
                 { age ?? 'Aucun age n\'a été fournit'} 
             </p>
-            <p>La syntaxe <code>{"age ?? 'Aucun age n'a été fournit'"}</code> permet d'afficher
+            <p>La syntaxe <Code>{"age ?? 'Aucun age n'a été fournit'"}</Code> permet d'afficher
             l'age si il existe, et le message d'erreur si age est null ou undefined.
             </p>
 
             <p>Pour afficher le message d'erreur uniquement, si l'age est undefined :
-                <code>{" { age === undefined && <p>Aucun âge n'a été fournit</p>}"}</code>
+                <Code>{" { age === undefined && <p>Aucun âge n'a été fournit</p>}"}</Code>
              </p>
             { age === undefined && <p>Aucun âge n'a été fournit</p>}
             { (age || age === 0) || <p>Aucun âge n'a été fournit</p>}

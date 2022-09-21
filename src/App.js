@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
 import 'highlight.js/styles/github.css';
+import 'highlight.js/styles/rainbow.css';
 import Header from './components/Header';
 import NavBar from './components/NavBar';
 import Conditionnel from './pages/Conditionnel';

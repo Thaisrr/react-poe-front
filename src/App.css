@@ -30,3 +30,19 @@ main, #Header {
     }
     
  }
+
+ code {
+    border-radius: 5px;
+ }
+
+ .not-copied code:hover {
+    cursor: pointer;
+ }
+
+ .not-copied code:hover::after {
+    content: '📋';
+ }
+
+ .copied code::after {
+    content: '👍';
+ }
