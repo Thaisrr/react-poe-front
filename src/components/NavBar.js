@@ -15,6 +15,10 @@ const NavBar = () => (
             <li>
                 <NavLink to="/props">Props</NavLink>
             </li>
+            <li>
+                <NavLink to="/reactivity">Réactivité</NavLink>
+            </li>
+
 
         </ul>
     </nav>
