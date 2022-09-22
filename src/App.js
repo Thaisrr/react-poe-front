@@ -10,6 +10,7 @@ import Presentation from './pages/Presentation';
 import Presentation2 from './pages/Presentation2';
 import Props from './pages/Props';
 import Reactivity from './pages/Reactivity';
+import Http from './pages/Http';
 
 
 
@@ -26,6 +27,7 @@ function App() {
         <Route path='/affichage-conditionnel' element={<Conditionnel/>} />
         <Route path="/props" element={<Props/>} />
         <Route path="/reactivity" element={<Reactivity/>} />
+        <Route path="/http" element={<Http/>} />
         <Route path='*' element={<NotFound/>} />
        {/* <Routes path='*' element={<Redirect to="/404"/>} /> */}
       </Routes>

@@ -1,0 +1,26 @@
+#Error.error {
+    --bg: red;
+    --color: white;
+}
+
+#Error.warning {
+    --bg: orange;
+    --color: white;
+}
+
+#Error.success {
+    --bg: green;
+    --color: white;
+}
+
+#Error {
+    position: fixed;
+    bottom: 50px;
+    left: calc( 50vw - 50% );
+    background-color: var(--bg);
+    color: var(--color);
+    border-radius: 5px;
+    padding: 5px 20px;
+    text-align: center;
+    width: fit-content;
+}

@@ -18,8 +18,9 @@ const NavBar = () => (
             <li>
                 <NavLink to="/reactivity">Réactivité</NavLink>
             </li>
-
-
+            <li>
+                <NavLink to="/http">Requêtes HTTP</NavLink>
+            </li>
         </ul>
     </nav>
 )
