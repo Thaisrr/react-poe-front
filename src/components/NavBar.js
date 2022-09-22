@@ -21,6 +21,9 @@ const NavBar = () => (
             <li>
                 <NavLink to="/http">Requêtes HTTP</NavLink>
             </li>
+            <li>
+                <NavLink to="/forms">Formulaires</NavLink>
+            </li>
         </ul>
     </nav>
 )

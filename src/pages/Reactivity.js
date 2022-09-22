@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Code from '../components/Code';
 
 const Reactivity = function()  {

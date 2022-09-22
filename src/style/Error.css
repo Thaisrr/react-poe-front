@@ -1,4 +1,4 @@
-#Error.error {
+#Error {
     --bg: red;
     --color: white;
 }
@@ -16,11 +16,11 @@
 #Error {
     position: fixed;
     bottom: 50px;
-    left: calc( 50vw - 50% );
+    left: 36%;
     background-color: var(--bg);
     color: var(--color);
     border-radius: 5px;
     padding: 5px 20px;
     text-align: center;
-    width: fit-content;
+    width: 26%;
 }
