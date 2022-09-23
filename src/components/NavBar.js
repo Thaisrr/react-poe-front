@@ -1,6 +1,11 @@
 import { NavLink } from "react-router-dom";
 import '../style/NavBar.css';
-const NavBar = () => (
+import {useSelector} from "react-redux";
+const NavBar = () => {
+    const counter = useSelector(state =>state?.panier?.counter);
+
+
+return (
     <nav id="Nav">
         <ul>
             <li>
@@ -27,7 +32,11 @@ const NavBar = () => (
             <li>
                 <NavLink to="/users">Users</NavLink>
             </li>
+            <li>
+                <NavLink to="/redux">Redux : {counter}</NavLink>  
+            </li>
         </ul>
     </nav>
 )
+}
 export default NavBar;

@@ -3,6 +3,7 @@ import Error from "../components/Error";
 import {useForm} from "react-hook-form";
 import axios from "axios";
 import { handleError } from "../services/errorHandler";
+import { redirect, useNavigate } from "react-router-dom";
 
 const Formulaires = function() {
     const username_input = useRef();
@@ -32,6 +33,7 @@ const Formulaires = function() {
     // register(), handleSubmit(), reset(), error
 
     const chemin = "http://localhost:8080/users";
+    const navigate = useNavigate(); // retourne une fonction de redirection
 
     function saveBis(user_info) {
         axios.post(chemin, user_info)
@@ -47,8 +49,9 @@ const Formulaires = function() {
     async function saveBisBis(user_info) {
         try {
             const res= await axios.post(chemin, user_info);
-            alert(`${res.data?.username} a bien été enregistré(e)`)
-            reset();
+            // alert(`${res.data?.username} a bien été enregistré(e)`)
+            navigate('/users');
+          // return redirect("/users");
         } catch(err) {
             handleError(err, setError);
         }

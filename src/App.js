@@ -13,6 +13,8 @@ import Reactivity from './pages/Reactivity';
 import Http from './pages/Http';
 import Formulaires from './pages/Formulaires';
 import Users from './pages/Users';
+import UserDetails from './pages/UserDetails';
+import Redux from './pages/Redux';
 
 
 
@@ -32,6 +34,8 @@ function App() {
         <Route path="/http" element={<Http/>} />
         <Route path='/forms' element={<Formulaires/>} />
         <Route path='/users' element={<Users/>} />
+        <Route path='/user/:id' element={<UserDetails/>} />
+        <Route path="/redux" element={<Redux />} />
         <Route path='*' element={<NotFound/>} />
        {/* <Routes path='*' element={<Redirect to="/404"/>} /> */}
       </Routes>

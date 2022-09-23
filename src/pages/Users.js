@@ -1,8 +1,8 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const Users = function() {
-    const url = 'http://localhost:8080/users';
     const [users, setUsers] = useState();
 
    
@@ -15,6 +15,7 @@ const Users = function() {
     // Sert pour effectuer une action une seule fois au chargement de la page
     useEffect(() => {
         async function getUsers() {
+            const url = 'http://localhost:8080/users';
             // axios.get retourne un objet response HTTP qui contient des champs status, data,...
             // pour ne récupérer que data, on peut décomposer l'objet de réponse {data} => équivalent de response.data
             const {data} = await axios.get(url);
@@ -27,8 +28,8 @@ const Users = function() {
     // On ne peut pas utiliser de fonction déclarées dans le composant à l'intérieur de useEffect : 
     // On peut déclarer par contre la fonction directement dans useEffect ( pour fait du async await par exemple)
     // Attention, useEffect ne peut pas être directement async, 
-
     useEffect(() => {
+        const url = 'http://localhost:8080/users';
         axios.get(url)
         .then(({data}) => setUsers(data));
     }, []);
@@ -47,7 +48,15 @@ const Users = function() {
     useEffect sert à la création du composant, => []  en 2éme paramétre
     lors de modifications d'une donnée surveillée => [données à surveiller] en 2éme param
     lors de mise à jour du DOM => pas de 2éme paramètre 
-    à la destruction du composant =>
+    à la destruction du composant => return () => action à faire
+
+    ATTENTION : 
+    =>  si le useEffect surveille une donnée a, il ne doit pas ( jamais, never ) la modifier (=> boucle infinie)
+    => si le useEffect n'a pas de [] en deuxième paramétre ( parce qu'il se déclanche à chaque mise à jour du DOM)
+        il doit pas modifier le DOM -> boucle infinie
+    => le useEffect ne doit pas utiliser de données déclarées dans composant, si il ne les surveille pas ( passée dans le [])       
+
+
 
     pour les composants en class, on utilisait les méthodes  : 
     componentDidMount, componentDidUpdate, componentWillUnmount
@@ -66,6 +75,11 @@ const Users = function() {
             console.warn('Destruction du composant')
         }
     }, [])
+    /*
+    Pour faire une action à la destruction du composant, il faut passer une fonction qui fait cette action
+    en retour du useEffect.
+    Automatiquement, la fonction retournée par le useEffect se lancera au changement de page, ou destruction du composant
+    */
 
 
 
@@ -75,7 +89,11 @@ const Users = function() {
             <h1>Utilisateurs.trices</h1>
 
             <ul>
-                {users && users.map(u => <li key={u.id}>{u.username}</li>)}
+                {users && users.map(u => (
+                    <li key={u.id}>
+                       <NavLink to={`/user/${u.id}`}>{u.username}</NavLink> 
+                    </li>
+                ))}
             </ul>
 
         </main>

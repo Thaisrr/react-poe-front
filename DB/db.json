@@ -1,12 +1,44 @@
 {
   "users": [
     {
-      "username": "tatayoyo",
-      "password": "jfkldsjflds",
-      "email": "tatayoyo@mail.fr",
+      "username": "Jean Micheline",
+      "password": "klfdsflsd",
+      "email": "micheline@mail.fr",
+      "title": "jedi",
+      "pronouns": "she",
+      "id": 2
+    },
+    {
+      "username": "jean Michelline",
+      "password": "ndskfndksjfds",
+      "email": "jeanmichelline@gamil.com",
       "title": "unicorn",
-      "pronouns": "they",
-      "id": 1
+      "pronouns": "she",
+      "id": 3
+    },
+    {
+      "username": "jean Michelline",
+      "password": "ddfdsfsdfds",
+      "email": "jeanmichelline@gamil.com",
+      "title": "empress",
+      "pronouns": "she",
+      "id": 4
+    },
+    {
+      "username": "fdkslfkdls",
+      "password": "fdsfsdddd",
+      "email": "fdfsd@fds.fd",
+      "title": "empress",
+      "pronouns": null,
+      "id": 5
+    },
+    {
+      "username": "fdkslfkdls",
+      "password": "fdsfsdddd",
+      "email": "fdfsd@fds.fd",
+      "title": "empress",
+      "pronouns": null,
+      "id": 6
     }
   ]
 }
