@@ -1,6 +1,8 @@
 import { useRef, useState } from "react";
 import Error from "../components/Error";
 import {useForm} from "react-hook-form";
+import axios from "axios";
+import { handleError } from "../services/errorHandler";
 
 const Formulaires = function() {
     const username_input = useRef();
@@ -25,16 +27,32 @@ const Formulaires = function() {
         }
     }
 
-    /***** Avec la lib react-hook-form ********/
+/***** Avec la lib react-hook-form ********/
     const {register, handleSubmit, reset, formState : {errors}} = useForm(); // retourne un objet, qu'on décompose
     // register(), handleSubmit(), reset(), error
 
+    const chemin = "http://localhost:8080/users";
+
     function saveBis(user_info) {
-        console.log(user_info);
-        reset();
+        axios.post(chemin, user_info)
+        .then((res) => {
+            alert(`${res.data?.username} a bien été enregistré(e)`)
+            reset();
+        })
+        .catch(err => {
+            handleError(err, setError);
+        })   
     }
 
-
+    async function saveBisBis(user_info) {
+        try {
+            const res= await axios.post(chemin, user_info);
+            alert(`${res.data?.username} a bien été enregistré(e)`)
+            reset();
+        } catch(err) {
+            handleError(err, setError);
+        }
+    }
  
     return (
         <main> 
@@ -59,7 +77,7 @@ const Formulaires = function() {
             </article>
             <article>
             <h2>React Hook Form</h2>
-            <form onSubmit={handleSubmit(saveBis)}>
+            <form onSubmit={handleSubmit(saveBisBis)}>
                 <div>
                     <label htmlFor="username">Username</label>
                     <input id="username" {...register('username', {required: true})}/>

@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState } from "react";
 import Error from "../components/Error";
+import { handleError } from "../services/errorHandler";
 
 const Http = () => {
 
@@ -15,7 +16,7 @@ const Http = () => {
             setUsers(response.data);
         } catch (err) {
             setUsers();
-            handleError(err);
+            handleError(err, setError);
         }
     }
 
@@ -24,21 +25,9 @@ const Http = () => {
         .then(res => setUsers(res.data))
         .catch(err => {
             setUsers();
-            handleError(err);
+            handleError(err, setError);
         })
 
-    }
-
-    function handleError(error) {
-        if(error.request && error.request.status === 404) {
-            setError("La ressource n'a pas été trouvée");
-        } 
-        else {
-            setError("Oups, quelque chose n'a pas fonctionné, rééssayez plus tard");
-        }
-        setTimeout(() => {
-            setError();
-        }, 40000)
     }
 
     return (

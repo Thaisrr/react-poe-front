@@ -12,6 +12,7 @@ import Props from './pages/Props';
 import Reactivity from './pages/Reactivity';
 import Http from './pages/Http';
 import Formulaires from './pages/Formulaires';
+import Users from './pages/Users';
 
 
 
@@ -30,6 +31,7 @@ function App() {
         <Route path="/reactivity" element={<Reactivity/>} />
         <Route path="/http" element={<Http/>} />
         <Route path='/forms' element={<Formulaires/>} />
+        <Route path='/users' element={<Users/>} />
         <Route path='*' element={<NotFound/>} />
        {/* <Routes path='*' element={<Redirect to="/404"/>} /> */}
       </Routes>
